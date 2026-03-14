@@ -1,0 +1,51 @@
+# Sustainability & SDG Reporting Hub — Backend stack
+# Run from backend/: docker compose up -d --build
+# API: http://localhost:8000  Docs: http://localhost:8000/docs
+# IMPORTANT: Port 8000 must be published so the frontend can reach the API.
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_SERVER: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: sustainability_hub
+      POSTGRES_USER: hub_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_secure_password}
+      # Optional: set OPENAI_API_KEY (e.g. in .env) to enable "Generate with AI"
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # Hot reload in development: mount app code
+      - .:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    container_name: sustainability-hub-db
+    environment:
+      POSTGRES_DB: sustainability_hub
+      POSTGRES_USER: hub_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_secure_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hub_user -d sustainability_hub"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

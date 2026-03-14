@@ -1,0 +1,53 @@
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies and virtual envs
+node_modules/
+.venv/
+venv/
+ENV/
+env/
+
+# Build and cache
+dist/
+build/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and temp
+*.log
+*.tmp
+.cache/
+
+# Uploads and local dev artifacts (do not commit user uploads)
+uploads/
+backend/uploads/
+*.sqlite
+*.db
+
+# Local screenshots / generated assets (use docs/screenshots for repo images)
+assets/
+
+# Optional: uncomment if you use these
+# .turbo
+# .next
+# coverage/

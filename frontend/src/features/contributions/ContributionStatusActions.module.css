@@ -1,0 +1,77 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.primaryBtn {
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #1f6feb;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #111827;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dangerBtn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #f97373;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.inlineModal {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.inlineBox {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 0.75rem 0.9rem;
+}
+
+.inlineTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.notes {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.inlineFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.primaryBtn:disabled,
+.secondaryBtn:disabled,
+.dangerBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+

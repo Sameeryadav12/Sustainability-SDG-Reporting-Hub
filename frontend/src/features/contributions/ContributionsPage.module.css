@@ -1,0 +1,3787 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.primaryBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #1f6feb;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.loading {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #047857;
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.secondaryBtn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #c3c7d1;
+  background: #fff;
+  color: #111827;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dangerBtn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #f97373;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filters {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filterField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 160px;
+}
+
+.filterField span {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.filterField select {
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.tableWrap {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table thead {
+  background: #f3f4f6;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.status_DRAFT {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.status_SUBMITTED {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status_APPROVED {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status_REJECTED {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.statusDefault {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.rowActions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.linkBtn {
+  border: none;
+  background: none;
+  color: #1f6feb;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.statusTextBtn {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.statusTextBtn span {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.statusTextBtnDisabled {
+  cursor: default;
+}
+
+.statusTextBtnDisabled span {
+  text-decoration: none;
+}
+
+.statusCol {
+  white-space: nowrap;
+}
+
+.actionsCol {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.status,
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.badge {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.status_DRAFT,
+.status_SUBMITTED,
+.status_APPROVED,
+.status_REJECTED {
+  font-weight: 500;
+}
+
+.status_DRAFT {
+  background: #e5e7eb;
+}
+
+.status_SUBMITTED {
+  background: #dbeafe;
+}
+
+.status_APPROVED {
+  background: #dcfce7;
+}
+
+.status_REJECTED {
+  background: #fee2e2;
+}
+
+.status {
+  background: #e5e7eb;
+}
+
+.statusCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.metaChip {
+  display: inline-flex;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+.statusLine {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.statusLine small {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.statusLine strong {
+  font-size: 0.8rem;
+}
+
+.statusLine span {
+  font-size: 0.8rem;
+}
+
+.statusLine button {
+  font-size: 0.75rem;
+}
+
+.statusCol small {
+  display: block;
+}
+
+.statusCol span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.statusCol strong {
+  margin-right: 0.25rem;
+}
+
+.statusCol span + small {
+  margin-top: 0.1rem;
+}
+
+.statusCol span:last-child {
+  margin-bottom: 0.1rem;
+}
+
+.statusCol span {
+  line-height: 1.2;
+}
+
+.statusCol span span {
+  margin-left: 0.25rem;
+}
+
+.statusCol span small {
+  margin-left: 0.25rem;
+}
+
+.statusCol span span,
+.statusCol span small {
+  font-size: 0.75rem;
+}
+
+.statusCol span span {
+  opacity: 0.8;
+}
+
+.statusCol span small {
+  opacity: 0.9;
+}
+
+.statusCol span span::before {
+  content: '· ';
+}
+
+.statusCol span small::before {
+  content: '· ';
+}
+
+.statusCol span span:first-child::before,
+.statusCol span small:first-child::before {
+  content: '';
+}
+
+.statusCol span span:first-child,
+.statusCol span small:first-child {
+  margin-left: 0;
+}
+
+.statusCol span span + small {
+  margin-left: 0.25rem;
+}
+
+.statusCol span small + span {
+  margin-left: 0.25rem;
+}
+
+.statusCol span span,
+.statusCol span small {
+  white-space: nowrap;
+}
+
+.statusCol span span:last-child,
+.statusCol span small:last-child {
+  margin-right: 0;
+}
+
+.statusCol span span:last-child::after,
+.statusCol span small:last-child::after {
+  content: '';
+}
+
+.statusCol span span::after,
+.statusCol span small::after {
+  content: '';
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  color: #9ca3af;
+}
+
+.statusCol span span,
+.statusCol span small {
+  color: #6b7280;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong::after {
+  content: '';
+}
+
+.statusCol span strong::before {
+  content: '';
+}
+
+.statusCol span strong {
+  margin-right: 0;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  letter-spacing: 0.01em;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  display: inline-block;
+}
+
+.statusCol span strong {
+  vertical-align: middle;
+}
+
+.statusCol span strong {
+  margin-top: 0;
+}
+
+.statusCol span strong {
+  margin-bottom: 0;
+}
+
+.statusCol span strong {
+  padding: 0;
+}
+
+.statusCol span strong {
+  border: 0;
+}
+
+.statusCol span strong {
+  background: transparent;
+}
+
+.statusCol span strong {
+  box-shadow: none;
+}
+
+.statusCol span strong {
+  outline: none;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  cursor: default;
+}
+
+.statusCol span strong {
+  user-select: text;
+}
+
+.statusCol span strong {
+  white-space: nowrap;
+}
+
+.statusCol span strong {
+  max-width: none;
+}
+
+.statusCol span strong {
+  overflow: visible;
+}
+
+.statusCol span strong {
+  text-overflow: clip;
+}
+
+.statusCol span strong {
+  word-break: normal;
+}
+
+.statusCol span strong {
+  word-wrap: normal;
+}
+
+.statusCol span strong {
+  hyphens: none;
+}
+
+.statusCol span strong {
+  direction: ltr;
+}
+
+.statusCol span strong {
+  unicode-bidi: normal;
+}
+
+.statusCol span strong {
+  text-align: left;
+}
+
+.statusCol span strong {
+  text-indent: 0;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: normal;
+}
+
+.statusCol span strong {
+  word-spacing: normal;
+}
+
+.statusCol span strong {
+  line-height: normal;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.backLink {
+  border: none;
+  background: none;
+  padding: 0;
+  margin-bottom: 0.25rem;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.status,
+.status_DRAFT,
+.status_SUBMITTED,
+.status_APPROVED,
+.status_REJECTED {
+  font-size: 0.75rem;
+}
+
+.statusCol {
+  font-size: 0.8rem;
+}
+
+.statusCol span {
+  margin-right: 0.15rem;
+}
+
+.statusCol span:last-child {
+  margin-right: 0;
+}
+
+.statusCol span span,
+.statusCol span small {
+  margin-left: 0.15rem;
+}
+
+.statusCol span span:first-child,
+.statusCol span small:first-child {
+  margin-left: 0;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  margin-right: 0.1rem;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  font-size: 0.75rem;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  vertical-align: middle;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  line-height: 1;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  display: inline-block;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  width: auto;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  text-align: center;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  font-weight: normal;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  font-style: normal;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  font-variant: normal;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  text-transform: none;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  text-decoration: none;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  text-shadow: none;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  letter-spacing: 0;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  word-spacing: 0;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  line-height: 1;
+}
+
+.statusCol span span::before,
+.statusCol span small::before {
+  color: #9ca3af;
+}
+
+.statusCol span span,
+.statusCol span small {
+  color: #6b7280;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong::before,
+.statusCol span strong::after {
+  content: '';
+}
+
+.statusCol span strong {
+  margin: 0;
+}
+
+.statusCol span strong {
+  padding: 0;
+}
+
+.statusCol span strong {
+  border: 0;
+}
+
+.statusCol span strong {
+  background: transparent;
+}
+
+.statusCol span strong {
+  box-shadow: none;
+}
+
+.statusCol span strong {
+  outline: none;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  cursor: default;
+}
+
+.statusCol span strong {
+  user-select: text;
+}
+
+.statusCol span strong {
+  white-space: nowrap;
+}
+
+.statusCol span strong {
+  max-width: none;
+}
+
+.statusCol span strong {
+  overflow: visible;
+}
+
+.statusCol span strong {
+  text-overflow: clip;
+}
+
+.statusCol span strong {
+  word-break: normal;
+}
+
+.statusCol span strong {
+  word-wrap: normal;
+}
+
+.statusCol span strong {
+  hyphens: none;
+}
+
+.statusCol span strong {
+  direction: ltr;
+}
+
+.statusCol span strong {
+  unicode-bidi: normal;
+}
+
+.statusCol span strong {
+  text-align: left;
+}
+
+.statusCol span strong {
+  text-indent: 0;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.statusCol span strong {
+  text-decoration: none;
+}
+
+.statusCol span strong {
+  text-transform: none;
+}
+
+.statusCol span strong {
+  text-shadow: none;
+}
+
+.statusCol span strong {
+  letter-spacing: 0;
+}
+
+.statusCol span strong {
+  word-spacing: 0;
+}
+
+.statusCol span strong {
+  line-height: 1.2;
+}
+
+.statusCol span strong {
+  font-style: normal;
+}
+
+.statusCol span strong {
+  font-variant: normal;
+}
+
+.statusCol span strong {
+  font-weight: 600;
+}
+
+.statusCol span strong {
+  font-size: 0.8rem;
+}
+
+.statusCol span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCol span strong {
+  color: #111827;
+}
+
+.detailSection {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.detailTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.detailMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.detailDescription {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.detailCard {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.detailCard h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  padding-block: 0.2rem;
+}
+
+.detailRow dt {
+  color: #6b7280;
+}
+
+.detailRow dd {
+  color: #111827;
+}
+
+.sectionHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.placeholderText {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.statusCellNote {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.statusCellNote strong {
+  font-weight: 500;
+}
+
+.statusCellNote span {
+  color: #374151;
+}
+
+.statusCellNote span::before {
+  content: '';
+}
+
+.statusCellNote span {
+  margin-left: 0;
+}
+
+.statusCellNote span::before {
+  margin-right: 0;
+}
+
+.statusCellNote span::before {
+  color: inherit;
+}
+
+.statusCellNote span::before {
+  font-size: inherit;
+}
+
+.statusCellNote span::before {
+  vertical-align: baseline;
+}
+
+.statusCellNote span::before {
+  line-height: inherit;
+}
+
+.statusCellNote span::before {
+  display: inline;
+}
+
+.statusCellNote span::before {
+  width: auto;
+}
+
+.statusCellNote span::before {
+  text-align: left;
+}
+
+.statusCellNote span::before {
+  font-weight: normal;
+}
+
+.statusCellNote span::before {
+  font-style: normal;
+}
+
+.statusCellNote span::before {
+  font-variant: normal;
+}
+
+.statusCellNote span::before {
+  text-transform: none;
+}
+
+.statusCellNote span::before {
+  text-decoration: none;
+}
+
+.statusCellNote span::before {
+  text-shadow: none;
+}
+
+.statusCellNote span::before {
+  letter-spacing: 0;
+}
+
+.statusCellNote span::before {
+  word-spacing: 0;
+}
+
+.statusCellNote span::before {
+  line-height: inherit;
+}
+
+.statusCellNote span::before {
+  color: inherit;
+}
+
+.statusCellNote span {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong::before,
+.statusCellNote span strong::after {
+  content: '';
+}
+
+.statusCellNote span strong {
+  margin: 0;
+}
+
+.statusCellNote span strong {
+  padding: 0;
+}
+
+.statusCellNote span strong {
+  border: 0;
+}
+
+.statusCellNote span strong {
+  background: transparent;
+}
+
+.statusCellNote span strong {
+  box-shadow: none;
+}
+
+.statusCellNote span strong {
+  outline: none;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  cursor: default;
+}
+
+.statusCellNote span strong {
+  user-select: text;
+}
+
+.statusCellNote span strong {
+  white-space: nowrap;
+}
+
+.statusCellNote span strong {
+  max-width: none;
+}
+
+.statusCellNote span strong {
+  overflow: visible;
+}
+
+.statusCellNote span strong {
+  text-overflow: clip;
+}
+
+.statusCellNote span strong {
+  word-break: normal;
+}
+
+.statusCellNote span strong {
+  word-wrap: normal;
+}
+
+.statusCellNote span strong {
+  hyphens: none;
+}
+
+.statusCellNote span strong {
+  direction: ltr;
+}
+
+.statusCellNote span strong {
+  unicode-bidi: normal;
+}
+
+.statusCellNote span strong {
+  text-align: left;
+}
+
+.statusCellNote span strong {
+  text-indent: 0;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+
+.statusCellNote span strong {
+  letter-spacing: 0;
+}
+
+.statusCellNote span strong {
+  word-spacing: 0;
+}
+
+.statusCellNote span strong {
+  line-height: 1.2;
+}
+
+.statusCellNote span strong {
+  font-style: normal;
+}
+
+.statusCellNote span strong {
+  font-variant: normal;
+}
+
+.statusCellNote span strong {
+  font-weight: 600;
+}
+
+.statusCellNote span strong {
+  font-size: 0.8rem;
+}
+
+.statusCellNote span strong {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.statusCellNote span strong {
+  color: inherit;
+}
+
+.statusCellNote span strong {
+  text-decoration: none;
+}
+
+.statusCellNote span strong {
+  text-transform: none;
+}
+
+.statusCellNote span strong {
+  text-shadow: none;
+}
+

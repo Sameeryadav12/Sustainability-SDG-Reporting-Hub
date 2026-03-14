@@ -1,0 +1,116 @@
+.page {
+  max-width: 1100px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+}
+
+.cycleSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cycleSelector label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.cycleSelect {
+  min-width: 220px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border, #e5e7eb);
+  font-size: 0.9rem;
+}
+
+.statusText {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.error {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--color-error, #b91c1c);
+}
+
+.summarySection {
+  margin-bottom: 1.75rem;
+}
+
+.sectionTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+.summaryCard {
+  padding: 1rem 1.25rem;
+  background: var(--color-surface, #fff);
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summaryValue {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text, #1a1a1a);
+}
+
+.summaryLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.chartSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chartCard {
+  padding: 0.75rem 1rem;
+  background: var(--color-surface, #fff);
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+.chartEmpty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #6b7280);
+}
+

@@ -1,0 +1,26 @@
+.page {
+  max-width: 600px;
+}
+
+.title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+}
+
+.message {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.back {
+  font-size: 0.9rem;
+  color: var(--color-primary, #0d9488);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}

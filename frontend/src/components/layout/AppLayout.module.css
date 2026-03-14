@@ -1,0 +1,109 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg, #fafafa);
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--color-surface, #fff);
+  border-right: 1px solid var(--color-border, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  padding: 1rem 1rem 0.75rem;
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+}
+
+.appName {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+  line-height: 1.35;
+}
+
+.nav {
+  padding: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.navLink {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #6b7280);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navLink:hover {
+  background: var(--color-bg-subtle, #f3f4f6);
+  color: var(--color-text, #1a1a1a);
+}
+
+.navLinkActive {
+  background: var(--color-primary-light, #ccfbf1);
+  color: var(--color-primary, #0d9488);
+  font-weight: 500;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.header {
+  flex-shrink: 0;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-surface, #fff);
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.headerUser {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo {
+  font-size: 0.875rem;
+  color: var(--color-text, #1a1a1a);
+}
+
+.role {
+  color: var(--color-text-muted, #6b7280);
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+.logoutBtn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #6b7280);
+  background: transparent;
+  border: 1px solid var(--color-border, #d1d5db);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background: var(--color-bg-subtle, #f3f4f6);
+  color: var(--color-text, #1a1a1a);
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow: auto;
+}
