@@ -132,6 +132,22 @@ export function getApiBaseUrl(): string {
   return getBaseUrl()
 }
 
+/** Check if the API is reachable (for login page). No auth, 15s timeout. */
+export async function checkHealth(): Promise<boolean> {
+  const base = getBaseUrl()
+  const url = `${base}/health`
+  const controller = new AbortController()
+  const id = setTimeout(() => controller.abort(), 15000)
+  try {
+    const res = await fetch(url, { method: 'GET', signal: controller.signal })
+    clearTimeout(id)
+    return res.ok
+  } catch {
+    clearTimeout(id)
+    return false
+  }
+}
+
 /**
  * Upload a file (multipart/form-data). Use for evidence upload. Do not set Content-Type.
  */

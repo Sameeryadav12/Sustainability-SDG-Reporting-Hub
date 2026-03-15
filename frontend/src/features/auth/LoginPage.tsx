@@ -1,13 +1,17 @@
 /**
  * Login page: email, password, validation, error display, loading state.
+ * Polls health until server is reachable (handles Render free-tier cold start).
  */
 
-import { useState, FormEvent } from 'react'
+import { useState, useEffect, useRef, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { login as apiLogin } from '@/api/auth'
-import { getBaseUrl, type ApiError } from '@/api/client'
+import { checkHealth, getBaseUrl, type ApiError } from '@/api/client'
 import { useAuth } from '@/hooks/useAuth'
 import styles from './LoginPage.module.css'
+
+const HEALTH_POLL_MS = 5000
+const SERVER_READY_FALLBACK_MS = 90000 // show form after 90s even if health never succeeds
 
 export function LoginPage() {
   const navigate = useNavigate()
@@ -18,6 +22,35 @@ export function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [connectionError, setConnectionError] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [serverReady, setServerReady] = useState(false)
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    const fallbackId = setTimeout(() => {
+      if (!cancelled) setServerReady(true)
+    }, SERVER_READY_FALLBACK_MS)
+    const tryHealth = async (): Promise<boolean> => {
+      const ok = await checkHealth()
+      if (!cancelled && ok) {
+        setServerReady(true)
+        if (pollRef.current) {
+          clearInterval(pollRef.current)
+          pollRef.current = null
+        }
+      }
+      return ok
+    }
+    tryHealth().then((ok) => {
+      if (cancelled || ok) return
+      pollRef.current = setInterval(tryHealth, HEALTH_POLL_MS)
+    })
+    return () => {
+      cancelled = true
+      clearTimeout(fallbackId)
+      if (pollRef.current) clearInterval(pollRef.current)
+    }
+  }, [])
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -54,6 +87,14 @@ export function LoginPage() {
       <div className={styles.card}>
         <h1 className={styles.title}>Sustainability & SDG Reporting Hub</h1>
         <p className={styles.subtitle}>Sign in to continue</p>
+        {!serverReady ? (
+          <div className={styles.form} style={{ padding: '1rem 0', color: '#374151' }}>
+            <p style={{ margin: 0, fontSize: '1rem' }}>Connecting to server…</p>
+            <p style={{ margin: '0.5rem 0 0', fontSize: '0.875rem', color: '#6b7280' }}>
+              Free-tier hosting may take up to a minute to wake up. Please wait.
+            </p>
+          </div>
+        ) : (
         <form onSubmit={handleSubmit} className={styles.form}>
           {error && (
             <div className={styles.error} role="alert">
@@ -108,6 +149,7 @@ export function LoginPage() {
             {loading ? 'Signing in…' : 'Sign in'}
           </button>
         </form>
+        )}
       </div>
     </div>
   )
