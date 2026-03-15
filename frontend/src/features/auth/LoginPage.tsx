@@ -5,7 +5,7 @@
 import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { login as apiLogin } from '@/api/auth'
-import type { ApiError } from '@/api/client'
+import { getBaseUrl, type ApiError } from '@/api/client'
 import { useAuth } from '@/hooks/useAuth'
 import styles from './LoginPage.module.css'
 
@@ -37,7 +37,7 @@ export function LoginPage() {
         apiErr.status === 401
           ? 'Incorrect email or password.'
           : apiErr.status === 0
-            ? 'Cannot reach the server. Make sure the backend is running (e.g. http://localhost:8000) and try again.'
+            ? `Cannot reach the server. Check your connection. API: ${getBaseUrl()}`
             : apiErr.message || 'Login failed. Please try again.'
       setError(message)
     } finally {

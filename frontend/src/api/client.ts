@@ -2,7 +2,7 @@
  * Central API client. Base URL from env; attaches Bearer token when present.
  */
 
-const getBaseUrl = (): string => {
+export const getBaseUrl = (): string => {
   const url = import.meta.env.VITE_API_BASE_URL
   if (!url || typeof url !== 'string') {
     return 'http://localhost:8000/api/v1'
