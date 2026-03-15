@@ -80,7 +80,8 @@ async function handleResponse<T>(res: Response): Promise<T> {
 }
 
 const FETCH_TIMEOUT_MS = 90000 // 90s for Render free-tier cold start
-const RETRY_DELAY_MS = 3000
+const RETRY_DELAY_MS = 5000
+const RETRY_COUNT = 2
 
 async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs = FETCH_TIMEOUT_MS): Promise<Response> {
   const controller = new AbortController()
@@ -98,7 +99,7 @@ async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs = F
 export async function apiRequest<T>(
   path: string,
   options: RequestInit = {},
-  retries = 1
+  retries = RETRY_COUNT
 ): Promise<T> {
   const base = getBaseUrl()
   const url = path.startsWith('http') ? path : `${base}${path.startsWith('/') ? '' : '/'}${path}`

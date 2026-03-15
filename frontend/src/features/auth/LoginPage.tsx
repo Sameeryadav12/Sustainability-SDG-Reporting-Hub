@@ -16,11 +16,13 @@ export function LoginPage() {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [connectionError, setConnectionError] = useState(false)
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError(null)
+    setConnectionError(false)
     const trimmedEmail = email.trim().toLowerCase()
     if (!trimmedEmail || !password) {
       setError('Email and password are required.')
@@ -33,13 +35,15 @@ export function LoginPage() {
       navigate('/dashboard', { replace: true })
     } catch (err) {
       const apiErr = err as ApiError
+      const isConnectionError = apiErr.status === 0
       const message =
         apiErr.status === 401
           ? 'Incorrect email or password.'
-          : apiErr.status === 0
+          : isConnectionError
             ? apiErr.message || `Cannot reach the server. Check your connection (API: ${getBaseUrl()})`
             : apiErr.message || 'Login failed. Please try again.'
       setError(message)
+      setConnectionError(isConnectionError)
     } finally {
       setLoading(false)
     }
@@ -51,7 +55,16 @@ export function LoginPage() {
         <h1 className={styles.title}>Sustainability & SDG Reporting Hub</h1>
         <p className={styles.subtitle}>Sign in to continue</p>
         <form onSubmit={handleSubmit} className={styles.form}>
-          {error && <div className={styles.error} role="alert">{error}</div>}
+          {error && (
+            <div className={styles.error} role="alert">
+              {error}
+              {connectionError && (
+                <p style={{ margin: '0.5rem 0 0', fontSize: '0.9rem' }}>
+                  Wait a moment, then click Sign in again — the server may be waking up.
+                </p>
+              )}
+            </div>
+          )}
           <div className={styles.field}>
             <label htmlFor="email">Email</label>
             <input
