@@ -40,14 +40,16 @@ def create_application() -> FastAPI:
         lifespan=lifespan,
     )
 
-    # CORS: use CORS_ORIGINS from env if set (comma-separated); else allow localhost for dev
+    # CORS: use CORS_ORIGINS from env if set (comma-separated); else allow localhost + production
     _default_origins = [
         "http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176",
         "http://localhost:3000", "http://localhost:8080",
         "http://127.0.0.1:5173", "http://127.0.0.1:5174", "http://127.0.0.1:5175", "http://127.0.0.1:5176",
         "http://127.0.0.1:3000", "http://127.0.0.1:8080",
+        "https://sustainability-sdg-reporting-hub.vercel.app",  # Production frontend (Vercel)
     ]
-    _cors_origins = [o.strip() for o in settings.cors_origins.split(",") if o.strip()] or _default_origins
+    _env_origins = [o.strip() for o in settings.cors_origins.split(",") if o.strip()]
+    _cors_origins = _env_origins if _env_origins else _default_origins
     app.add_middleware(
         CORSMiddleware,
         allow_origins=_cors_origins,

@@ -79,9 +79,26 @@ async function handleResponse<T>(res: Response): Promise<T> {
   return data as T
 }
 
+const FETCH_TIMEOUT_MS = 90000 // 90s for Render free-tier cold start
+const RETRY_DELAY_MS = 3000
+
+async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs = FETCH_TIMEOUT_MS): Promise<Response> {
+  const controller = new AbortController()
+  const id = setTimeout(() => controller.abort(), timeoutMs)
+  try {
+    const res = await fetch(url, { ...options, signal: controller.signal })
+    clearTimeout(id)
+    return res
+  } catch (e) {
+    clearTimeout(id)
+    throw e
+  }
+}
+
 export async function apiRequest<T>(
   path: string,
-  options: RequestInit = {}
+  options: RequestInit = {},
+  retries = 1
 ): Promise<T> {
   const base = getBaseUrl()
   const url = path.startsWith('http') ? path : `${base}${path.startsWith('/') ? '' : '/'}${path}`
@@ -95,10 +112,16 @@ export async function apiRequest<T>(
   }
   let res: Response
   try {
-    res = await fetch(url, { ...options, headers })
+    res = await fetchWithTimeout(url, { ...options, headers })
   } catch (e) {
+    if (retries > 0) {
+      await new Promise((r) => setTimeout(r, RETRY_DELAY_MS))
+      return apiRequest<T>(path, options, retries - 1)
+    }
     const msg = e instanceof Error ? e.message : 'Unable to connect to the server.'
-    const outMsg = msg.includes('fetch') ? 'Unable to connect to the server.' : msg
+    const outMsg = msg.includes('abort') || msg.includes('fetch')
+      ? 'Server is starting up (free tier). Please wait 30–60 seconds and try again.'
+      : msg
     throw { message: outMsg, status: 0, detail: undefined } as ApiError
   }
   return handleResponse<T>(res)

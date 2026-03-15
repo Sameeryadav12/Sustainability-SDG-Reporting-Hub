@@ -37,7 +37,7 @@ export function LoginPage() {
         apiErr.status === 401
           ? 'Incorrect email or password.'
           : apiErr.status === 0
-            ? `Cannot reach the server. Check your connection. API: ${getBaseUrl()}`
+            ? apiErr.message || `Cannot reach the server. Check your connection (API: ${getBaseUrl()})`
             : apiErr.message || 'Login failed. Please try again.'
       setError(message)
     } finally {
