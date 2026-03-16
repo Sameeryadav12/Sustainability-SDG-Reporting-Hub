@@ -36,5 +36,6 @@ ENV PYTHONPATH=/app
 # Expose port
 EXPOSE 8000
 
-# Default: run uvicorn with app.main:app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Default startup: run migrations, seed SDGs + first admin (idempotent), then start uvicorn.
+# Render will provide PORT; fall back to 10000 when not set (e.g. local docker run).
+CMD ["sh", "-c", "poetry run alembic upgrade head && poetry run python -m app.db.seed_sdgs && poetry run python -m app.db.seed_admin && poetry run uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]
