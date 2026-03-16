@@ -4,19 +4,6 @@ A web platform for universities and institutions to collect sustainability data 
 
 ---
 
-## Live Demo
-
-**[Launch Live Demo →](https://sustainability-sdg-reporting-hub.vercel.app)**
-
-| Link | Description |
-|------|--------------|
-| [**Live Application**](https://sustainability-sdg-reporting-hub.vercel.app) | Production deployment on Vercel |
-| [**API Documentation**](https://sustainability-sdg-reporting-hub.onrender.com/docs) | Interactive API docs (Swagger) |
-
-*Demo credentials: `demo@example.com` / `DemoPassword1!` (if seeded). Free-tier hosting may have cold starts on first load.*
-
----
-
 ## Project overview
 
 **Sustainability & SDG Reporting Hub** helps organisations:
